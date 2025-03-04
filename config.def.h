@@ -6,8 +6,8 @@ static const unsigned int gappx     = 8;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12" };
-static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=12";
+static const char *fonts[]          = { "JetBrains Mono:size=12" };
+static const char dmenufont[]       = "JetBrains Mono:size=12";
 static const char col_gray1[]       = "#74596E";
 static const char col_gray2[]       = "#8D868B";
 static const char col_gray3[]       = "#bbbbbb";
@@ -60,10 +60,10 @@ static const Layout layouts[] = {
 
 /* commands - misc. */
 static const char *termcmd[]  =    { "alacritty", NULL };
-static const char *rofidruncmd[] = {"rofi", "-show", "drun", NULL};
-static const char *browser[] =     {"flatpak", "run", "io.gitlab.librewolf-community", NULL};
+static const char *rofidruncmd[] = { "rofi", "-show", "drun", NULL };
+static const char *browser[] =     { "librewolf", NULL };
 /* Volume control */
-static const char *pavucntrl[] = {"pavucontrol", "--tab=3", NULL};
+static const char *pavucntrl[] = { "pavucontrol", "--tab=3", NULL };
 static const char *volUp[] =     { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
 static const char *volDown[] =   { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
 static const char *volMute[] =   { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
