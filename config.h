@@ -24,18 +24,14 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "λ", "II", "III", "IV", "V" };
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 2;    /* number of clients in master area */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
+static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int attachbelow = 1;    /* 1 means attach after the currently active window */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -79,22 +75,12 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = rofidruncmd } },
-	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
-        { MODKEY,                       XK_w,      spawn,      	   {.v = browser } },
-	{ MODKEY,			XK_s,	   spawn,	   {.v = pavucntrl } },
-      /*{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },*/
-      /*{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },*/
-      /*{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },*/
-      /*{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },*/
+	{ MODKEY,             		      XK_Return, spawn,          {.v = termcmd } },
+  { MODKEY,                       XK_w,      spawn,      	   {.v = browser } },
+	{ MODKEY,			                  XK_s,	     spawn,	         {.v = pavucntrl } },
 	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_k,      setmfact,       {.f = +0.05} },
-      /*{ MODKEY,                       XK_Return, zoom,           {0} },*/
-      /*{ MODKEY,                       XK_Tab,    view,           {0} },*/
-	{ MODKEY,             		XK_q,      killclient,     {0} },
-      /*{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },*/
-      /*{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },*/
-      /*{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },*/
-      /*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
+	{ MODKEY,             		      XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
