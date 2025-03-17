@@ -56,7 +56,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands - misc. */
-static const char *termcmd[]  =    { "alacritty", NULL };
+static const char *termcmd[]  =    { "wezterm", NULL };
 static const char *rofidruncmd[] = { "rofi", "-show", "drun", NULL };
 static const char *browser[] =     { "librewolf", NULL };
 /* Volume control */
@@ -81,8 +81,8 @@ static const Key keys[] = {
 	{ MODKEY,			                  XK_s,	     spawn,	         {.v = pavucntrl } },
 	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_k,      setmfact,       {.f = +0.05} },
-  { MODKEY|ShiftMask,             XK_g,      movestack,      {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_h,      movestack,      {.i = -1 } },
+  { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 	{ MODKEY,             		      XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
